@@ -2,66 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="https://fonts.google.com/specimen/Outfit">
-  
-  <title>Frontend Mentor | QR code component</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <title>QR Code Component</title>
+  /* Color Variables */
+:root {
+  --light-blue: hsl(212, 45%, 89%);
+  --white: hsl(0, 0%, 100%);
+  --dark-blue: hsl(218, 44%, 22%);
+  --blue: hsl(228, 45%, 44%);
+  --base-font-size: 16px;
+}
 
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      max-width: 1440px;
-      min-width: 320px;
-      font-family: 'Outfit', sans-serif;
-      font-size: 15px;
-      font-weight: 700;
-      background-color: hsl(212, 45%, 89%);
-    }
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .main-container {
-      width: 300px;
-      height: 500px;
-      padding: 15px;
-      margin: 30px 10px;
-      background-color: hsl(0, 0%, 100%);
-      border-radius: 12px;
-      text-align: center;
-      color: hsl(218, 44%, 22%);
-    }
+html {
+  font-size: 100%; /* 1rem = 16px (default browser setting) */
+}
 
-    img{
-      height: 300px;
-      border-radius: 12px;
-    }
+body {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem; /* Matches 16px */
+  line-height: 1.5;
+  height: 100%;
+  background-color: var(--light-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--dark-blue);
+}
 
-    p {
-      color: hsl(218, 44%, 22%);
-      font-weight: 400;
-      line-height: 1.5;
-      padding-left: 16px;
-      padding-right: 16px;
-    }
+/* Main Container */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--white);
+  border-radius: 0.75rem; 
+  padding: 1.25rem; 
+  width: 90%;
+  max-width: 18.75rem; 
+  box-shadow: 0px 0.5rem 0.9375rem rgba(0, 0, 0, 0.1);
+}
 
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+.main-container img {
+  width: 100%;
+  border-radius: 0.75rem; 
+  margin-bottom: 1.25rem;
+}
+
+.main-container h1 {
+  font-size: 1.5rem; 
+  font-weight: 700;
+  margin-bottom: 1rem; 
+}
+
+.main-container p {
+  font-size: 0.9375rem; 
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0 1.25rem; 
+}
+
+/* Footer */
+footer.attribution {
+  font-size: 0.75rem; 
+  margin-top: 1.25rem; 
+  text-align: center;
+}
+
+footer.attribution a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+footer.attribution a:hover {
+  text-decoration: underline;
+}
 </head>
 <body>
-  <div class="main-container">
-    <img src="images/image-qr-code.png" alt="QR-code scan">
-    <h2>Improve your front-end skills by building projects</h2>
-    <p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
-  </div>
+  <!-- Main landmark -->
+  <main>
+    <section class="main-container" aria-labelledby="main-heading">
+      <img src="images/image-qr-code.png" alt="QR code linking to Frontend Mentor for coding challenges">
+      <h1 id="main-heading">Improve your front-end skills by building projects</h1>
+      <p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level.</p>
+    </section>
+  </main>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  <!-- Footer landmark -->
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>. 
     Coded by <a href="#">WebMujahid</a>.
-  </div>
+  </footer>
 </body>
 </html>
