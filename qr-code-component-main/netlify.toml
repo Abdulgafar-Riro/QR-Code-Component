@@ -1,0 +1,4 @@
+[build]
+  base = "qr-code-component-main" 
+  publish = "." 
+  command = ""
